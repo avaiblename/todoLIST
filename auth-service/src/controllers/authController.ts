@@ -3,6 +3,12 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/user';
 
+/**
+ * Функция для регистрации нового пользователя.
+ * @param req Объект запроса Express.
+ * @param res Объект ответа Express.
+ * @returns void
+ */
 export const register = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
