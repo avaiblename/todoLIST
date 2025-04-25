@@ -28,15 +28,14 @@ DATABASE_URL=postgres://user:password@localhost:5432/todo_db
 JWT_SECRET=your_secret_key
 Замените your_secret_key на ваш реальный секретный ключ.
 Установите зависимости для каждого сервиса:
-bash
-
 
 cd auth-service && npm install
 cd ../task-service && npm install
 cd ../api-gateway && npm install
 cd ..
 Запустите проект с помощью Docker Compose:
-bash
 
 docker-compose up --build
+
+
 Откройте браузер и перейдите по адресу http://localhost:8080, чтобы получить доступ к фронтенду.
