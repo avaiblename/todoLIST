@@ -1,0 +1,32 @@
+\chapter{Веб-\/приложение "{}Список дел"{}}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Веб-\/приложение "{}Список дел"{}@{Веб-\/приложение ""Список дел""}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Описание}{Описание}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Приложение позволяет пользователям регистрироваться, авторизовываться и управлять задачами (CRUD, категории, фильтрация). Проект реализован с использованием микросервисной архитектуры, включающей сервисы аутентификации, управления задачами, API-\/шлюз и фронтенд.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Технологии}{Технологии}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{Backend}}\+: Type\+Script, Express.\+js, Sequelize, Postgre\+SQL
+\item {\bfseries{Frontend}}\+: HTML, CSS, Java\+Script
+\item {\bfseries{Контейнеризация}}\+: Docker, Docker Compose
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Требования}{Требования}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Node.\+js 14+
+\item Docker и Docker Compose
+\item Git
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Установка и запуск}{Установка и запуск}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item Склонируйте репозиторий\+: \`{}\`{}\`{}bash git clone \href{https://github.com/username/todo-list-app.git}{\texttt{ https\+://github.\+com/username/todo-\/list-\/app.\+git}} cd todo-\/list-\/app Замените \href{https://github.com/username/todo-list-app.git}{\texttt{ https\+://github.\+com/username/todo-\/list-\/app.\+git}} на URL вашего репозитория.
+\end{DoxyEnumerate}
+
+Создайте файл .env в корне проекта со следующим содержимым\+: env
+
+DATABASE\+\_\+\+URL=postgres\+://user\+:password@localhost\+:5432/todo\+\_\+db JWT\+\_\+\+SECRET=your\+\_\+secret\+\_\+key Замените your\+\_\+secret\+\_\+key на ваш реальный секретный ключ. Установите зависимости для каждого сервиса\+:
+
+cd auth-\/service \&\& npm install cd ../task-\/service \&\& npm install cd ../api-\/gateway \&\& npm install cd .. Запустите проект с помощью Docker Compose\+:
+
+docker-\/compose up --build
+
+Откройте браузер и перейдите по адресу \href{http://localhost:8080}{\texttt{ http\+://localhost\+:8080}}, чтобы получить доступ к фронтенду. 
